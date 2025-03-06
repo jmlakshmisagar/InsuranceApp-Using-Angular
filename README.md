@@ -1,27 +1,40 @@
-# Trail
+# Employee Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+A comprehensive web-based employee management system built with Angular and Spring Boot.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 👥 Employee Management (CRUD operations)
+- 🔍 Quick Search functionality
+- 💰 Salary and Insurance scheme handling
+- 📱 Responsive design
+- 🛡️ Secure data management
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Frontend: Angular 15+
+- Backend: Spring Boot 3
+- Database: MySQL
+- Styling: Bootstrap 5
+- Icons: Bootstrap Icons
 
-## Build
+## Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Node.js (v14+)
+- Angular CLI
+- Java JDK 17
+- Maven
+- MySQL
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## API Endpoints
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | Get all employees |
+| POST | `/create` | Create new employee |
+| GET | `/find/{id}` | Find employee by ID |
+| PUT | `/update` | Update employee |
+| DELETE | `/delete/{id}` | Delete employee |
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
