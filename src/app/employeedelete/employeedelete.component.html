@@ -1,0 +1,75 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card bg-light shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-danger mb-4">Delete Employee</h4>
+
+                    <!-- Search Form -->
+                    <form #deleteForm="ngForm" (ngSubmit)="findEmployee()" *ngIf="!employee" class="mb-4">
+                        <div class="mb-3">
+                            <label for="employeeId" class="form-label">Employee ID</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="employeeId" 
+                                   name="employeeId"
+                                   [(ngModel)]="employeeId"
+                                   required
+                                   min="1">
+                        </div>
+                        <button type="submit" 
+                                class="btn btn-secondary w-100" 
+                                [disabled]="!deleteForm.valid">
+                            Find Employee
+                        </button>
+                    </form>
+
+                    <!-- Confirmation Card -->
+                    <div *ngIf="employee && !loading" class="card border-danger">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger mb-3">Confirm Delete</h5>
+                            <dl class="row mb-3">
+                                <dt class="col-sm-4">ID</dt>
+                                <dd class="col-sm-8">{{ employee.id }}</dd>
+
+                                <dt class="col-sm-4">Name</dt>
+                                <dd class="col-sm-8">{{ employee.name }}</dd>
+
+                                <dt class="col-sm-4">Designation</dt>
+                                <dd class="col-sm-8">{{ employee.designation }}</dd>
+
+                                <dt class="col-sm-4">Salary</dt>
+                                <dd class="col-sm-8">₹{{ employee.salary }}</dd>
+                            </dl>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-danger" 
+                                        (click)="deleteEmployee()">
+                                    Confirm Delete
+                                </button>
+                                <button class="btn btn-secondary" 
+                                        (click)="cancelDelete()">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loading Spinner -->
+                    <div *ngIf="loading" class="text-center my-4">
+                        <div class="spinner-border text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                    <!-- Messages -->
+                    <div *ngIf="errorMessage" class="alert alert-danger">
+                        {{ errorMessage }}
+                    </div>
+                    <div *ngIf="successMessage" class="alert alert-success">
+                        {{ successMessage }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

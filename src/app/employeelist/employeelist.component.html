@@ -1,0 +1,47 @@
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Employee List</h4>
+            
+            <div class="alert alert-danger" *ngIf="errorMessage">
+                {{ errorMessage }}
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">Insurance Scheme</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="loading">
+                            <td colspan="6" class="text-center py-4">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr *ngFor="let employee of employees">
+                            <th scope="row">{{ employee.id }}</th>
+                            <td>{{ employee.name }}</td>
+                            <td>{{ employee.designation }}</td>
+                            <td>₹{{ employee.salary }}</td>
+                            <td>{{ employee.insurencescheme }}</td>
+
+                        </tr>
+                        <tr *ngIf="!loading && employees.length === 0">
+                            <td colspan="6" class="text-center py-4">
+                                No employees found.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

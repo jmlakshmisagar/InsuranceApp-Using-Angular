@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div *ngIf="successMessage" class="alert alert-success mt-3">
+                {{ successMessage }}
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                {{ errorMessage }}
+            </div>
+
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Employee Form</h4>
+                    <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" class="row g-3">
+                        <div class="col-12 mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="employee.name"
+                                required #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
+                            <div class="invalid-feedback" *ngIf="name.invalid && name.touched">
+                                Name is required
+                            </div>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <label for="designation" class="form-label">Designation</label>
+                            <input type="text" class="form-control" id="designation" name="designation"
+                                [(ngModel)]="employee.designation" required #designation="ngModel"
+                                [class.is-invalid]="designation.invalid && designation.touched">
+                            <div class="invalid-feedback" *ngIf="designation.invalid && designation.touched">
+                                Designation is required
+                            </div>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <label for="salary" class="form-label">Salary</label>
+                            <div class="input-group">
+                                <span class="input-group-text">₹</span>
+                                <input type="number" class="form-control" id="salary" name="salary"
+                                    [(ngModel)]="employee.salary" required min="0" #salary="ngModel"
+                                    [class.is-invalid]="salary.invalid && salary.touched">
+                                <div class="invalid-feedback" *ngIf="salary.invalid && salary.touched">
+                                    Valid salary is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-secondary w-100" [disabled]="!employeeForm.valid">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
