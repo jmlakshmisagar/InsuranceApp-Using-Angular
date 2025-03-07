@@ -1,32 +1,27 @@
-.card {
-    transition: transform 0.3s ease;
+/* Base font styles */
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* Font weight variations */
+.montserrat-light {
+    composes: montserrat;
+    font-weight: 300;
 }
 
-.list-group-item {
-    transition: all 0.2s ease;
+.montserrat-regular {
+    composes: montserrat;
+    font-weight: 400;
 }
 
-.list-group-item:hover {
-    background-color: #f8f9fa;
-    transform: translateX(5px);
+.montserrat-medium {
+    composes: montserrat;
+    font-weight: 500;
 }
 
-.display-4 {
-    color: #2c3e50;
-}
-
-.bi {
-    transition: transform 0.3s ease;
-}
-
-.card:hover .bi {
-    transform: scale(1.1);
-}
-
-footer {
-    margin-top: auto;
+.montserrat-bold {
+    composes: montserrat;
+    font-weight: 700;
 }

@@ -24,7 +24,7 @@ import { EmployeedeleteComponent } from './employeedelete/employeedelete.compone
     EmployeecreationComponent,
     EmployeefindComponent,
     EmployeeupdateComponent,
-    EmployeedeleteComponent
+    EmployeedeleteComponent,
   ],
   imports: [
     // Angular Modules
