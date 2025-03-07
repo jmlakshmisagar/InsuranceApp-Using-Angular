@@ -1,31 +1,42 @@
 <div class="container-fluid p-0">
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-2 fixed-top borderring">
         <div class="container">
-            <a class="navbar-brand" href="#">Employee Management</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-people-fill me-2"></i>Employee Management
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/list-employees" routerLinkActive="active">List All</a>
+                        <a class="nav-link" routerLink="/list-employees" routerLinkActive="active">
+                            <i class="bi bi-list-ul me-1"></i>List All
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/add-employee" routerLinkActive="active">Add Employee</a>
+                        <a class="nav-link" routerLink="/add-employee" routerLinkActive="active">
+                            <i class="bi bi-person-plus me-1"></i>Add Employee
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/edit-employee" routerLinkActive="active">Edit Employee</a>
+                        <a class="nav-link" routerLink="/edit-employee" routerLinkActive="active">
+                            <i class="bi bi-pencil me-1"></i>Edit Employee
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/delete-employee" routerLinkActive="active">Delete Employee</a>
+                        <a class="nav-link" routerLink="/delete-employee" routerLinkActive="active">
+                            <i class="bi bi-trash me-1"></i>Delete Employee
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/find-employee" routerLinkActive="active">Find Employee</a>
+                        <a class="nav-link" routerLink="/find-employee" routerLinkActive="active">
+                            <i class="bi bi-search me-1"></i>Find Employee
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
 </div>
